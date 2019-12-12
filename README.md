@@ -1,5 +1,5 @@
-Stock Price Forecasting\\
-Using Prophet by Facebook to forecast stock prices fed by the Yahoo Finance API
+Stock Price Forecasting\n
+Using Prophet by Facebook to forecast stock prices fed by the Yahoo Finance API\n
 
 To use:
 1) In "settings.env":
