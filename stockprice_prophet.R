@@ -12,6 +12,7 @@ symbol <- Sys.getenv("symbol")
 start_date <- Sys.getenv("start_date")
 end_date <- eval(parse(text = Sys.getenv("end_date")))
 pred_length <- as.numeric(Sys.getenv("pred_length"))
+seasonality <- as.logical(eval(Sys.getenv("seasonality")))
 
 #fetch function from yahoo
 yahoo.fetch <- function(symbol, start_date, end_date) {
@@ -36,9 +37,11 @@ cv <- function() {
 output.graphs <- function(AMAPE) {
   setwd("figures")
   
-  jpeg(paste(symbol, "-seasonality.jpg", sep = ""))
-  prophet_plot_components(model, forecast)
-  dev.off()
+  if (seasonality == TRUE) {
+    jpeg(paste(symbol, "-seasonality.jpg", sep = ""))
+    prophet_plot_components(model, forecast)
+    dev.off()
+  }
   
   interactive_plot <- dyplot.prophet(model, forecast, uncertainty = TRUE)
   saveWidget(interactive_plot, paste(symbol, "@[", AMAPE, "].html", sep = ""),
