@@ -1,6 +1,11 @@
 # Stock Price Forecasting
 Using Prophet by Facebook to forecast stock prices fed by the Yahoo Finance API
 
+## Pre-requisites
+* Code editor to configure input settings (settings.env)
+* R to run script (stockprice_forecasting.R)
+* Web browser to compile HTML output (/figures)
+
 ## Getting started (settings.env)
 Provide input for "symbol" (string representing ticker symbol); "start_date" and "end_date" (string formatted as YYYY-MM-DD representing timespan of data to pull from Yahoo Finance API); "pred_length" (integer representing span of forecast in days); and "seasonality" (boolean representing whether or not to generate a seasonality components graph).
 
