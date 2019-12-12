@@ -1,4 +1,4 @@
-Stock Price Forecasting
+Stock Price Forecasting\\
 Using Prophet by Facebook to forecast stock prices fed by the Yahoo Finance API
 
 To use:
