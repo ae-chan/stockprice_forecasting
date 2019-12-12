@@ -37,7 +37,7 @@ cv <- function() {
 output.graphs <- function(AMAPE) {
   setwd("figures")
   
-  if (seasonality == TRUE) {
+  if (seasonality) {
     jpeg(paste(symbol, "-seasonality.jpg", sep = ""))
     prophet_plot_components(model, forecast)
     dev.off()
