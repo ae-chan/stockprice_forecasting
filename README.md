@@ -9,3 +9,8 @@ Code may be executed directly without user changes to the code. Changes may be m
 
 ## Output ("/figures" folder)
 Stores all outputs. Title is formatted as "symbol@[average mean absolute percentage error].html" for quick screening of predictive accuracy on each stock.
+
+## Functionalities to be added:
+1. readme.md screenshots
+2. Multi-stock forecasting (simultaneously)
+3. First derivative forecasting
