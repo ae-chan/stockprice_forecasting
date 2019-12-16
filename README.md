@@ -20,6 +20,7 @@ Stores all outputs. Title is formatted as "symbol@[average mean absolute percent
 2. Multi-stock forecasting (simultaneously)
 3. First derivative forecasting
 
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,3 +47,4 @@ Stores all outputs. Title is formatted as "symbol@[average mean absolute percent
 <script type="application/htmlwidget-sizing" data-for="htmlwidget-f5496a47ccec93d0b9a1">{"viewer":{"width":450,"height":350,"padding":10,"fill":true},"browser":{"width":960,"height":500,"padding":40,"fill":true}}</script>
 </body>
 </html>
+```
