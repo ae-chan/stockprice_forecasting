@@ -1,0 +1,2 @@
+special-vendored-path/* linguist-vendored
+figures/*.html linguist-vendored=false
