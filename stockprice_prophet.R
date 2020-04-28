@@ -5,7 +5,7 @@ library(prophet)
 library(htmlwidgets)
 
 #pull .env variables
-root <- "/Users/anthony_chan/OneDrive/Projects/stockprice_forecasting/"
+root <- "/Users/anthony_chan/Google Drive/Projects/Stockprice_Forecasting/"
 setwd(root)
 readRenviron("settings.env")
 symbol <- Sys.getenv("symbol")
@@ -27,7 +27,7 @@ yahoo.fetch <- function(symbol, start_date, end_date) {
 #cross-validate over every week for the past half year
 cv <- function() {
   #df.cv <- cross_validation(model, initial = end_date - as.Date(start_date) - floor(365/2), period = 7, horizon = pred_length, units = 'days')
-  df.cv <- cross_validation(model, initial = floor(365/2), period = 7, horizon = pred_length, units = 'days')
+  df.cv <- cross_validation(model, initial = floor(365*(4/3)), period = pred_length, horizon = pred_length, units = 'days')
   df.p <- performance_metrics(df.cv)
   AMAPE <- mean(df.p$mape)
   return(round(AMAPE,3))
@@ -44,7 +44,7 @@ output.graphs <- function(AMAPE) {
   }
   
   interactive_plot <- dyplot.prophet(model, forecast, uncertainty = TRUE)
-  saveWidget(interactive_plot, paste(symbol, "@[", AMAPE, "].html", sep = ""),
+  saveWidget(interactive_plot, paste(symbol, "@", Sys.Date(), " [", AMAPE, "].html", sep = ""),
              title = paste(symbol, " Forecasted to ", end_date + pred_length, sep = ""))
   
   setwd(root)
