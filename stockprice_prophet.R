@@ -6,6 +6,7 @@ library(htmlwidgets)
 
 #pull .env variables
 root <- "/Users/anthony_chan/Google Drive/Projects/Stockprice_Forecasting/"
+figures <- "/Users/anthony_chan/Google Drive/Projects/Stockprice_Forecasting/figures"
 setwd(root)
 readRenviron("settings.env")
 symbol <- Sys.getenv("symbol")
@@ -35,7 +36,7 @@ cv <- function() {
 
 #data visualization output
 output.graphs <- function(AMAPE) {
-  setwd("figures")
+  setwd(figures)
   
   if (seasonality) {
     jpeg(paste(symbol, "-seasonality.jpg", sep = ""))
